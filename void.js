@@ -1,5 +1,4 @@
 var lrs;
-var statements = [];
 try {
     lrs = new TinCan.LRS(
         {
@@ -67,22 +66,19 @@ function fetchStatementsCallback (err, sr) {
         return;
     }
 
-    statements = statements.concat(sr.statements);
-
-    if (sr.more == null) {
-        processStatements();
-    }
-    else {
-        lrs.queryStatements(
+    processStatements(sr.statements);
+    if (sr.more != null) 
+    {
+        lrs.moreStatements(
             {
-                url: sr.mmore,
+                url: sr.more,
                 callback: fetchStatementsCallback
             }
         );
     }
 }
 
-function processStatements(){
+function processStatements(statements){
     console.log('processing statements');
 
     var statementsToVoid = [];

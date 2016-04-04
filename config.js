@@ -14,6 +14,7 @@ var config = {
         'since': null,
         'until': null,
         'format': 'ids', // There is no need to change this
+        'ascending': true
     },
     'additionalFilter': {}
 };
@@ -36,6 +37,7 @@ var config = {
         'since': null,
         'until': null,
         'format': 'ids', // There is no need to change this
+        'ascending': true
     },
     'additionalFilter': {}
 };
@@ -64,7 +66,8 @@ var config = {
         'related_agents': true,
         'since': null,
         'until': null,
-        'format': 'ids' // There is no need to change this
+        'format': 'ids', // There is no need to change this
+        'ascending': true
     },
     'additionalFilter': {
         'authority.account.name': 'ZZRIQwyXBEULpE',
