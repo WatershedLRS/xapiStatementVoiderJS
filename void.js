@@ -88,8 +88,7 @@ function processStatements(statements){
     for (statementIndex = 0; statementIndex < statementsLength; ++statementIndex) {
         // Ignore existing 'voiding' statements 
         if (statements[statementIndex].verb.id === 'http://adlnet.gov/expapi/verbs/voided') {
-            statements = statements.splice(statementIndex, 1);
-            break;
+            continue;
         }
         var match = true;
         for (var filterStr in config.additionalFilter) {
